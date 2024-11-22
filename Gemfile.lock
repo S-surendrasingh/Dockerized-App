@@ -271,7 +271,7 @@ DEPENDENCIES
   figaro
   importmap-rails
   jbuilder
-  pg (~> 1.1)
+  pg (~> 1.5)
   puma (~> 5.0)
   rails (~> 7.0.8, >= 7.0.8.6)
   selenium-webdriver
