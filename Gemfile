@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby "3.2.2"
+ruby "3.1.0"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.8", ">= 7.0.8.6"
@@ -73,3 +73,6 @@ end
 
 gem 'figaro'
 gem 'dotenv-rails'
+gem 'capistrano', '~> 3.17'
+gem 'capistrano-puma'
+gem 'capistrano-nginx'
