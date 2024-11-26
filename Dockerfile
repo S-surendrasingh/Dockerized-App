@@ -1,26 +1,20 @@
 FROM ruby:3.1.0
 
 # Install dependencies
-RUN apt-get update -qq && apt-get install -y nodejs postgresql-client
+RUN apt-get update -qq && apt-get install -y build-essential libpq-dev nodejs
 
-# Set up the working directory
+# Set working directory
 WORKDIR /myapp
-
-# Install bundler
-RUN gem install bundler
 
 # Install gems
 COPY Gemfile Gemfile.lock ./
 RUN bundle install
 
-# Copy the rest of the app
-COPY . ./
+# Copy application files
+COPY . .
 
-# Precompile assets
-RUN bin/rails assets:precompile
+# Expose the application port
+EXPOSE 3000  # Expose only port 3000 for the app
 
-# Expose port for Puma
-EXPOSE 3000
-
-# Run the application
-CMD ["bin/rails", "server", "-b", "0.0.0.0"]
+# Set the default command
+CMD ["bin/rails", "server", "-b", "0.0.0.0", "-p", "3000"]  # Use port 3000 explicitly

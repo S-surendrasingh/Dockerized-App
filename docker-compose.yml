@@ -1,40 +1,28 @@
-version: '3.9'
+version: "3.9"
 
 services:
   backend:
     build:
       context: .
-      dockerfile: Dockerfile
-    volumes:
-      - .:/portal
     ports:
-      - "3000:3000"
+      - "3000:3000"  # Ensure backend exposes port 3000
     depends_on:
       - db
-    networks:
-      - portal-network # Backend connected to the shared network
     environment:
       RAILS_ENV: development
-      DB_HOST: db
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: password
+      DATABASE_URL: "postgres://postgres:password@db:5432/rails_development"
+    networks:
+      - portal-network
 
   db:
     image: postgres:13
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: password
-    volumes:
-      - pgdata:/var/lib/postgresql/data
+      POSTGRES_DB: rails_development
     networks:
-      - portal-network # Database connected to the shared network
+      - portal-network
 
 networks:
-  portal-network: # Shared network for backend and database
-    name: portal # Matches the external network name
-    external: true # Indicates the network already exists
-
-volumes:
-  pgdata: # PostgreSQL persistent data volume
-    name: postgres # Matches the existing external volume
-    external: true
+  portal-network:
+    driver: bridge
