@@ -14,7 +14,7 @@ RUN bundle install
 COPY . .
 
 # Expose the application port
-EXPOSE 3000  # Expose only port 3000 for the app
+EXPOSE 3000
 
 # Set the default command
-CMD ["bin/rails", "server", "-b", "0.0.0.0", "-p", "3000"]  # Use port 3000 explicitly
+CMD ["bin/rails", "server", "-b", "0.0.0.0", "-p", "3000"]

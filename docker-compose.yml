@@ -1,11 +1,9 @@
-version: "3.9"
-
 services:
   backend:
     build:
       context: .
     ports:
-      - "3000:3000"  # Ensure backend exposes port 3000
+      - "3000:3000"
     depends_on:
       - db
     environment:
@@ -25,4 +23,5 @@ services:
 
 networks:
   portal-network:
-    driver: bridge
+    name: portal # Matches the external network name
+    external: true # Indicates the network already exists
