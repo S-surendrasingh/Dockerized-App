@@ -4,6 +4,9 @@ AllCops:
     - 'vendor/**/*'
     - '.lib/**/*'
     - 'config/**/*'
+    - 'bin/rubocop'
+    - 'bin/bundler-audit'
+    - 'bin/brakeman'
 
 Layout/LineLength:
   Enabled: true
