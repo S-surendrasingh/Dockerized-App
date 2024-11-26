@@ -1,7 +1,10 @@
+version: '3.7'
+
 services:
   backend:
     build:
       context: .
+    working_dir: /portal  # Ensure this matches the working directory where your Rails app is located
     ports:
       - "3000:3000"
     depends_on:
@@ -23,5 +26,5 @@ services:
 
 networks:
   portal-network:
-    name: portal # Matches the external network name
-    external: true # Indicates the network already exists
+    name: portal
+    external: true
