@@ -1,16 +1,46 @@
 AllCops:
+  NewCops: enable  # Enable new cops by default
   Exclude:
-    - 'bin/**/*'
+    - 'vendor/**/*'
+    - '.lib/**/*'
+    - 'config/**/*'
 
-Metrics/LineLength:
-  Enabled: true  # Enable this cop
+Layout/LineLength:
+  Enabled: true
 
-Style/StringLiterals:
-  Enabled: false  # Disable this cop
+Layout/SpaceAroundEqualsInParameterDefault:
+  Enabled: true
 
-Style/Documentation:
-  Enabled: false  # Enable this cop
+Naming/PredicateName:
+  Enabled: true
 
-Metrics/MethodLength:
-  Max: 15  # Adjust this as needed
-  Enabled: true  # Enable this cop
+Naming/AccessorMethodName:
+  Enabled: true
+
+# New cops
+Gemspec/AddRuntimeDependency:
+  Enabled: true
+
+Gemspec/DeprecatedAttributeAssignment:
+  Enabled: true
+
+Gemspec/DevelopmentDependencies:
+  Enabled: true
+
+Gemspec/RequireMFA:
+  Enabled: true
+
+Layout/LineContinuationLeadingSpace:
+  Enabled: true
+
+Layout/LineContinuationSpacing:
+  Enabled: true
+
+Layout/LineEndStringConcatenationIndentation:
+  Enabled: true
+
+Layout/SpaceBeforeBrackets:
+  Enabled: true
+
+# Remove obsolete cop
+# Style/BracesAroundHashParameters:  # This should be removed or commented out
