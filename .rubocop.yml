@@ -1,0 +1,16 @@
+AllCops:
+  Exclude:
+    - 'bin/**/*'
+
+Metrics/LineLength:
+  Enabled: true  # Enable this cop
+
+Style/StringLiterals:
+  Enabled: false  # Disable this cop
+
+Style/Documentation:
+  Enabled: false  # Enable this cop
+
+Metrics/MethodLength:
+  Max: 15  # Adjust this as needed
+  Enabled: true  # Enable this cop
