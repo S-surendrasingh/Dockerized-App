@@ -7,6 +7,7 @@ AllCops:
     - 'bin/rubocop'
     - 'bin/bundler-audit'
     - 'bin/brakeman'
+    - 'bin/bundle-audit'
 
 Layout/LineLength:
   Enabled: true
