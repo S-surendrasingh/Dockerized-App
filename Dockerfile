@@ -26,3 +26,4 @@ EXPOSE 3000
 
 # Set the default command to start the Rails server
 CMD ["bin/rails", "server", "-b", "0.0.0.0", "-p", "3000"]
+
