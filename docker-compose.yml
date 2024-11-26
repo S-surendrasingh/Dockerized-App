@@ -14,7 +14,7 @@ services:
     networks:
       - portal-network # Backend connected to the shared network
     environment:
-      RAILS_ENV: production
+      RAILS_ENV: development
       DB_HOST: db
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: password
